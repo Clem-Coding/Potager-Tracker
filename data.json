@@ -1,0 +1,382 @@
+[
+  {
+    "Nom": "Aïl",
+    "Température de germination": "null",
+    "Temps de levée": "null"
+  },
+  {
+    "Nom": "Amaranthes à grains",
+    "Température de germination": 15,
+    "Temps de levée": "null"
+  },
+  {
+    "Nom": "Aneth",
+    "Température de germination": 15,
+    "Temps de levée": 11,
+    "Image": "images_legumes/aneth.jpeg"
+  },
+  {
+    "Nom": "Arroche",
+    "Température de germination": 10,
+    "Temps de levée": 14
+  },
+  {
+    "Nom": "Artichaut",
+    "Température de germination": 21,
+    "Temps de levée": 23
+  },
+  {
+    "Nom": "Aubergine",
+    "Température de germination": 22,
+    "Temps de levée": 12,
+    "Temps de récolte": 90,
+    "Image": "images_legumes/aubergine.jpeg"
+  },
+  {
+    "Nom": "Basilic",
+    "Température de germination": 18,
+    "Temps de levée": 9,
+    "Temps de récolte": 50,
+    "Image": "images_legumes/basilic.jpeg"
+  },
+  {
+    "Nom": "Betterave",
+    "Température de germination": 15,
+    "Temps de levée": 10,
+    "Temps de récolte": 60,
+    "Image": "images_legumes/betterave.png"
+  },
+
+  {
+    "Nom": "Blette à cardes",
+    "Température de germination": 16,
+    "Temps de levée": 11,
+    "Temps de récolte": 50,
+    "Image": "images_legumes/blette.jpeg"
+  },
+
+  {
+    "Nom": "Cardon",
+    "Température de germination": 12,
+    "Temps de levée": 10,
+    "Temps de récolte": 130
+  },
+  {
+    "Nom": "Carotte",
+    "Température de germination": 10,
+    "Temps de levée": 18,
+    "Temps de récolte": 70
+  },
+  {
+    "Nom": "Céleri-Branche",
+    "Température de germination": 18,
+    "Temps de levée": 18,
+    "Temps de récolte": 140
+  },
+  {
+    "Nom": "Céleri",
+    "Température de germination": 18,
+    "Temps de levée": 21
+  },
+  {
+    "Nom": "Cerfeuil",
+    "Température de germination": 7,
+    "Temps de levée": 12
+  },
+
+  {
+    "Nom": "Chicorée",
+    "Température de germination": 20,
+    "Temps de levée": 5
+  },
+
+  {
+    "Nom": "Chou Brocoli",
+    "Température de germination": 20,
+    "Temps de levée": 11,
+    "Temps de récolte": 90
+  },
+  {
+    "Nom": "Chou cabus",
+    "Température de germination": 18,
+    "Temps de levée": 6
+  },
+  {
+    "Nom": "Chou chinois",
+    "Température de germination": 18,
+    "Temps de levée": 6,
+    "Temps de récolte": 80,
+    "Image": "images_legumes/chou-chinois.png"
+  },
+
+  {
+    "Nom": "Chou kale",
+    "Température de germination": 15,
+    "Temps de levée": 10,
+    "Temps de récolte": 80
+  },
+  {
+    "Nom": "Chou de Bruxelles",
+    "Température de germination": 13,
+    "Temps de levée": 8,
+    "Temps de récolte": 105
+  },
+  {
+    "Nom": "Chou de Milan",
+    "Température de germination": 16,
+    "Temps de levée": 6
+  },
+  {
+    "Nom": "Chou navet rutabaga",
+    "Température de germination": 20,
+    "Temps de levée": 9
+  },
+  {
+    "Nom": "Chou-fleur",
+    "Température de germination": 20,
+    "Temps de levée": 9,
+    "Temps de récolte": 100
+  },
+  {
+    "Nom": "Chou-rave",
+    "Température de germination": 20,
+    "Temps de levée": 7,
+    "Temps de récolte": 60
+  },
+  {
+    "Nom": "Chou rouge",
+    "Température de germination": 16,
+    "Temps de levée": 7,
+    "Temps de récolte": 70
+  },
+  {
+    "Nom": "Ciboulette",
+    "Température de germination": 18,
+    "Temps de levée": 18
+  },
+  {
+    "Nom": "Concombre",
+    "Température de germination": 25,
+    "Temps de levée": 8,
+    "Temps de récolte": 65
+  },
+  {
+    "Nom": "Coriandre",
+    "Température de germination": 18,
+    "Temps de levée": 20
+  },
+  {
+    "Nom": "Cornichon",
+    "Température de germination": 15,
+    "Temps de levée": 8,
+    "Temps de récolte": 60
+  },
+  {
+    "Nom": "Courges Butternut",
+    "Température de germination": 18,
+    "Temps de levée": 8,
+    "Temps de récolte": 120
+  },
+  {
+    "Nom": "Courges Potimarron",
+    "Température de germination": 18,
+    "Temps de levée": 8,
+    "Temps de récolte": 90
+  },
+  {
+    "Nom": "Courgette",
+    "Température de germination": 15,
+    "Temps de levée": 8,
+    "Temps de récolte": 100
+  },
+  {
+    "Nom": "Cresson",
+    "Température de germination": 20,
+    "Temps de levée": 4
+  },
+  {
+    "Nom": "Échalote",
+    "Température de germination": "null",
+    "Temps de levée": "null"
+  },
+  {
+    "Nom": "Endive",
+    "Température de germination": 20,
+    "Temps de levée": 11
+  },
+  {
+    "Nom": "Épinard",
+    "Température de germination": 15,
+    "Temps de levée": 10
+  },
+  {
+    "Nom": "Fenouil",
+    "Température de germination": 20,
+    "Temps de levée": 15,
+    "Temps de récolte": 100
+  },
+  {
+    "Nom": "Fève",
+    "Température de germination": 21,
+    "Temps de levée": 10,
+    "Temps de récolte": 80
+  },
+  {
+    "Nom": "Gombo",
+    "Température de germination": 22,
+    "Temps de levée": 8,
+    "Temps de récolte": 100
+  },
+  {
+    "Nom": "Haricots « grain » ou haricot blanc",
+    "Température de germination": 16,
+    "Temps de levée": 7
+  },
+
+  {
+    "Nom": "Haricot commun",
+    "Température de germination": 16,
+    "Temps de levée": 7,
+    "Temps de récolte": 70
+  },
+  {
+    "Nom": "Laitue",
+    "Température de germination": 12,
+    "Temps de levée": 8,
+    "Temps de récolte": 50
+  },
+  {
+    "Nom": "Mâche",
+    "Température de germination": 18,
+    "Temps de levée": 10,
+    "Temps de récolte": 80
+  },
+  {
+    "Nom": "Maïs",
+    "Température de germination": 21,
+    "Temps de levée": 8,
+    "Temps de récolte": 80
+  },
+  {
+    "Nom": "Melon",
+    "Température de germination": 25,
+    "Temps de levée": 8
+  },
+  {
+    "Nom": "Navet",
+    "Température de germination": 15,
+    "Temps de levée": 5,
+    "Temps de récolte": 60
+  },
+  {
+    "Nom": "Nigelle",
+    "Température de germination": 15,
+    "Temps de levée": "null"
+  },
+  {
+    "Nom": "Oignon blanc, hâtif ou « de printemps »",
+    "Température de germination": 15,
+    "Temps de levée": "null"
+  },
+  {
+    "Nom": "Oignons de couleur (de conservation)",
+    "Température de germination": 15,
+    "Temps de levée": "null"
+  },
+  {
+    "Nom": "Oseille",
+    "Température de germination": 15,
+    "Temps de levée": 7
+  },
+  {
+    "Nom": "Panais",
+    "Température de germination": 20,
+    "Temps de levée": 25
+  },
+  {
+    "Nom": "Pastèque",
+    "Température de germination": 20,
+    "Temps de levée": 6
+  },
+  {
+    "Nom": "Persil",
+    "Température de germination": 18,
+    "Temps de levée": 28
+  },
+  {
+    "Nom": "Physalis",
+    "Température de germination": 18,
+    "Temps de levée": 20
+  },
+  {
+    "Nom": "Piment",
+    "Température de germination": 22,
+    "Temps de levée": 15,
+    "Temps de récolte": 100
+  },
+  {
+    "Nom": "Poireau",
+    "Température de germination": 12,
+    "Temps de levée": 12,
+    "Temps de récolte": 90
+  },
+  {
+    "Nom": "Pois",
+    "Température de germination": 13,
+    "Temps de levée": 20,
+    "Temps de récolte": 60
+  },
+
+  {
+    "Nom": "Poivron",
+    "Température de germination": 22,
+    "Temps de levée": 15
+  },
+  {
+    "Nom": "Pomme de terre",
+    "Température de germination": "null",
+    "Temps de levée": "null",
+    "Temps de récolte": 90
+  },
+
+  {
+    "Nom": "Pourpier",
+    "Température de germination": 20,
+    "Temps de levée": 15
+  },
+
+  {
+    "Nom": "Radis d’hiver",
+    "Température de germination": 17,
+    "Temps de levée": 4,
+    "Temps de récolte": 55
+  },
+  {
+    "Nom": "Radis de printemps",
+    "Température de germination": 15,
+    "Temps de levée": 4,
+    "Temps de récolte": 30
+  },
+  {
+    "Nom": "Raifort",
+    "Température de germination": 10,
+    "Temps de levée": 8,
+    "Temps de récolte": 240
+  },
+  {
+    "Nom": "Roquette",
+    "Température de germination": 20,
+    "Temps de levée": 7
+  },
+  {
+    "Nom": "Tétragone",
+    "Température de germination": 15,
+    "Temps de levée": 9
+  },
+  {
+    "Nom": "Tomate",
+    "Température de germination": 20,
+    "Temps de levée": 8,
+    "Temps de récolte": 80
+  }
+]

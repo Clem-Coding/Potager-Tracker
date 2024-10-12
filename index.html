@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Potager tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/cf14298a64.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link href="style.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <script src="script.js" defer></script>
+    <script src="navigation.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="title">
+        Potager Tracker <i class="fa-solid fa-seedling"></i>
+      </div>
+      <nav id="navigation">
+        <div class="navigation-item">
+          <a href="#" id="accueilLink" class="nav-link">Accueil</a>
+        </div>
+        <div class="navigation-item">
+          <a href="#" id="enregistrementsLink" class="nav-link"
+            >Voir mes enregistrements</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="donnees-utilisateur">
+        <div id="accroche">On sème quoi aujourd'hui?</div>
+        <div class="search-container">
+          <input
+            type="search"
+            list="autocompletion"
+            placeholder="Rechercher un légume"
+            id="nom"
+            name="nom"
+          />
+          <img src="search-icon.png" class="search-icon" alt="Recherche" />
+          <datalist id="autocompletion"></datalist>
+        </div>
+
+        <div class="date-container">
+          <div id="phrase-date">À quelle date?</div>
+          <input type="date" id="date" name="date" />
+        </div>
+        <div class="btn-container">
+          <button id="bouton-ajouter">Ajouter!</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Affichage tableau-->
+    <div class="section-tableau">
+      <table id="tableau">
+        <tbody>
+          <tr>
+            <th scope="col" id="first-colonne"></th>
+            <th scope="col">
+              <div id="texte-entete">Semé le</div>
+            </th>
+            <th scope="col">
+              <div id="texte-entete">
+                Température <br />
+                de levée
+              </div>
+            </th>
+            <th scope="col">
+              <div id="texte-entete">Temps de levée</div>
+            </th>
+            <th scope="col">
+              <div id="texte-entete">Récolte</div>
+            </th>
+            <th scope="col"><div id="texte-entete">Levé?</div></th>
+            <th scope="col"><div id="texte-entete">Commentaire</div></th>
+            <th scope="col" id="last-colonne"></th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
