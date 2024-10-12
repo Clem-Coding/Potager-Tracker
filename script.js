@@ -83,11 +83,15 @@ function rentrerLesDonnees() {
         let valeur3 = listeLegumes[i]["Température de germination"] + "°C";
         let valeur4 = listeLegumes[i]["Temps de levée"] + " jours";
         let valeur5 =
-          "levera autour du " +
+          "• levera autour du <br>" +
+          "<span class='important'>" +
           dateLevee(nbJoursLevee) +
+          "</span>" +
           "<br>" +
-          "recolte autour du " +
-          dateRecolte(nbJoursRecolte);
+          "• recolte autour du <br>" +
+          "<span class='important'>" +
+          dateRecolte(nbJoursRecolte) +
+          "</span>";
 
         // Ajoute la ligne
         const derniereLigne = ajouterLigne(
@@ -194,7 +198,7 @@ function ajouterLigne(
   </td>
   
   <td><div class="menu-container">
-       <button class="remove-icon"> <img src="remove-icon.png" alt="icone supprimer la ligne"></button>
+       <button class="remove-icon"> <img src="./assets/remove-icon.png" alt="icone supprimer la ligne"></button>
       </div>
       <div id="delete-message-box" onclick="supprimerLigne(this)"><i class="fa-solid fa-trash"></i> Supprimer la ligne</div>
       

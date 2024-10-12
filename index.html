@@ -15,8 +15,8 @@
       crossorigin="anonymous"
     ></script>
 
-    <link href="style.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="./assets/style.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="./assets/favicon.png" />
 
     <script src="script.js" defer></script>
     <script src="navigation.js" defer></script>
@@ -24,9 +24,10 @@
   <body>
     <header>
       <div class="title">
-        Potager Tracker <i class="fa-solid fa-seedling"></i>
+        <h1>Potager Tracker <i class="fa-solid fa-seedling"></i></h1>
       </div>
-      <nav id="navigation">
+
+      <nav class="nav-bar">
         <div class="navigation-item">
           <a href="#" id="accueilLink" class="nav-link">Accueil</a>
         </div>
@@ -39,8 +40,8 @@
     </header>
 
     <main>
-      <div class="donnees-utilisateur">
-        <div id="accroche">On sème quoi aujourd'hui?</div>
+      <div class="user-input-container">
+        <div class="intro-message">On sème quoi aujourd'hui?</div>
         <div class="search-container">
           <input
             type="search"
@@ -49,14 +50,19 @@
             id="nom"
             name="nom"
           />
-          <img src="search-icon.png" class="search-icon" alt="Recherche" />
+          <img
+            src="./assets/search-icon.png"
+            class="search-icon"
+            alt="Recherche"
+          />
           <datalist id="autocompletion"></datalist>
         </div>
 
         <div class="date-container">
-          <div id="phrase-date">À quelle date?</div>
+          <div class="phrase-date">À quelle date?</div>
           <input type="date" id="date" name="date" />
         </div>
+
         <div class="btn-container">
           <button id="bouton-ajouter">Ajouter!</button>
         </div>
@@ -65,31 +71,33 @@
 
     <!-- Affichage tableau-->
     <div class="section-tableau">
-      <table id="tableau">
-        <tbody>
-          <tr>
-            <th scope="col" id="first-colonne"></th>
-            <th scope="col">
-              <div id="texte-entete">Semé le</div>
-            </th>
-            <th scope="col">
-              <div id="texte-entete">
-                Température <br />
-                de levée
-              </div>
-            </th>
-            <th scope="col">
-              <div id="texte-entete">Temps de levée</div>
-            </th>
-            <th scope="col">
-              <div id="texte-entete">Récolte</div>
-            </th>
-            <th scope="col"><div id="texte-entete">Levé?</div></th>
-            <th scope="col"><div id="texte-entete">Commentaire</div></th>
-            <th scope="col" id="last-colonne"></th>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-container">
+        <table id="tableau">
+          <tbody>
+            <tr>
+              <th scope="col" id="first-colonne"></th>
+              <th scope="col">
+                <div id="texte-entete">Semé le</div>
+              </th>
+              <th scope="col">
+                <div id="texte-entete">
+                  Température <br />
+                  de levée
+                </div>
+              </th>
+              <th scope="col">
+                <div id="texte-entete">Temps de levée</div>
+              </th>
+              <th scope="col">
+                <div id="texte-entete">Suivi</div>
+              </th>
+              <th scope="col"><div id="texte-entete">Levé?</div></th>
+              <th scope="col"><div id="texte-entete">Commentaire</div></th>
+              <th scope="col" id="last-colonne"></th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>
