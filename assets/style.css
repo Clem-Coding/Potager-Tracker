@@ -151,18 +151,26 @@ input[type="search"] {
 
 /* ---------- Section Tableau --------------------*/
 
+/* th.colonne-large {
+  width: 40%; 
+}
+
+th.colonne-narrow {
+  min-width: 10%;
+  background-color: #f05754;
+} */
+
 .section-tableau {
   height: 100vh;
-  /* padding-top: rem; */
-  display: flex;
-  justify-content: center;
   padding: 5em;
 }
 
 /* Conteneur qui gère le défilement */
 .table-container {
   overflow-x: scroll;
-  max-width: 100%; /* S'assure que le tableau ne dépasse pas du conteneur */
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 table {
@@ -175,15 +183,16 @@ table {
   border-radius: 10px;
   height: fit-content;
   margin-top: 3em;
-  /*width: 150%;  Forcer le débordement */
+  width: auto;
+  table-layout: auto;
 }
 
 th,
 td {
   padding: 8px 10px;
   border: solid 2px black;
-  text-align: center; /* Centre le texte horizontalement */
-  vertical-align: middle; /* Centre le texte verticalement */
+  text-align: center;
+  vertical-align: middle;
 }
 
 tr {
@@ -210,10 +219,27 @@ td:nth-of-type(1) {
   font-weight: 700;
 }
 
+/*suivi input */
 td:nth-of-type(5) {
   text-align: left;
-  width: 15%;
   padding-left: 1em; /* à revoir */
+  min-width: 25%;
+}
+
+/*comment-input*/
+td:nth-of-type(7) {
+  min-width: 30%;
+}
+
+td:nth-of-type(2),
+td:nth-of-type(3),
+td:nth-of-type(4) {
+  min-width: 15%;
+}
+
+td:nth-of-type(6),
+td:nth-of-type(8) {
+  min-width: 10%;
 }
 
 /*checkbox */
@@ -274,24 +300,21 @@ input[type="checkbox"] {
 /* 
 test comment box */
 
-textarea {
-  resize: none;
-  border-radius: 5px;
-  font-size: 14px;
-  font-family: Roboto condensed;
-}
-
-.commentaire-input {
-  width: 180px;
-  height: 60px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
-}
+/*Style zone de commentaire */
 
 .comment-container {
   display: flex;
   flex-direction: column;
+}
+
+.commentaire-input {
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-family: Roboto condensed;
+  resize: none;
+  border-radius: 0.2em;
 }
 
 .envoyer-button {
@@ -320,19 +343,16 @@ img {
 }
 
 .toast-container {
-  display: flex; /* Utilise Flexbox */
-  justify-content: center; /* Centre horizontalement */
-  align-items: center; /* Centre verticalement */
-
-  position: fixed; /* Position fixe pour rester visible lors du défilement */
-  bottom: 50px; /* Distance par rapport au bas de la fenêtre */
-  left: 50%; /* Centrage horizontal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
-
-  background-color: #9fcda8;
+  background-color: #35a04a;
   color: white;
-  /* padding: 2px 5px; */
   border-radius: 5px;
   width: 500px;
   height: 50px;
@@ -376,8 +396,7 @@ img {
   cursor: pointer;
 }
 
-.menu-container {
-  width: 5em;
+.delete-action-container {
   display: flex;
   justify-content: center;
   align-items: center;

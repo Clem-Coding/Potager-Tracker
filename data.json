@@ -7,7 +7,7 @@
   {
     "Nom": "Amaranthes à grains",
     "Température de germination": 15,
-    "Temps de levée": "null"
+    "Temps de levée": 12
   },
   {
     "Nom": "Aneth",
@@ -331,12 +331,6 @@
     "Nom": "Poivron",
     "Température de germination": 22,
     "Temps de levée": 15
-  },
-  {
-    "Nom": "Pomme de terre",
-    "Température de germination": "null",
-    "Temps de levée": "null",
-    "Temps de récolte": 90
   },
 
   {

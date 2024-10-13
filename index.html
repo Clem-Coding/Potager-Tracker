@@ -50,11 +50,11 @@
             id="nom"
             name="nom"
           />
-          <img
+          <!-- <img
             src="./assets/search-icon.png"
             class="search-icon"
             alt="Recherche"
-          />
+          /> -->
           <datalist id="autocompletion"></datalist>
         </div>
 
@@ -76,24 +76,26 @@
           <tbody>
             <tr>
               <th scope="col" id="first-colonne"></th>
-              <th scope="col">
+              <th scope="col" class="colonne-narrow">
                 <div id="texte-entete">Semé le</div>
               </th>
-              <th scope="col">
+              <th scope="col" class="colonne-narrow">
                 <div id="texte-entete">
                   Température <br />
                   de levée
                 </div>
               </th>
-              <th scope="col">
+              <th scope="col" class="colonne-narrow">
                 <div id="texte-entete">Temps de levée</div>
               </th>
               <th scope="col">
                 <div id="texte-entete">Suivi</div>
               </th>
-              <th scope="col"><div id="texte-entete">Levé?</div></th>
+              <th scope="col" class="colonne-narrow">
+                <div id="texte-entete">Levé?</div>
+              </th>
               <th scope="col"><div id="texte-entete">Commentaire</div></th>
-              <th scope="col" id="last-colonne"></th>
+              <th scope="col" class="colonne-narrow" id="last-colonne"></th>
             </tr>
           </tbody>
         </table>

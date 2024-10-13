@@ -197,7 +197,7 @@ function ajouterLigne(
 </div>
   </td>
   
-  <td><div class="menu-container">
+  <td><div class="delete-action-container">
        <button class="remove-icon"> <img src="./assets/remove-icon.png" alt="icone supprimer la ligne"></button>
       </div>
       <div id="delete-message-box" onclick="supprimerLigne(this)"><i class="fa-solid fa-trash"></i> Supprimer la ligne</div>
