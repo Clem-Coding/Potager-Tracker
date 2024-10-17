@@ -175,7 +175,7 @@ th.colonne-narrow {
 
 table {
   border-collapse: collapse;
-  border: 1px solid #8c8c8c;
+/*   border: 1px solid #8c8c8c; */
   font-family: Roboto, sans-serif;
   font-size: 1.5rem;
   border: none;
