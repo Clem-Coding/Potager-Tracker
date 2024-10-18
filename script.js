@@ -77,7 +77,7 @@ function rentrerLesDonnees() {
       const year = nouvelleDate.getFullYear(); // Obtient l'année de la date
       if (year < 2024 || year > 2025) {
         alert("Veuillez saisir une date valide");
-        dateInvalid = true;
+        dateInvalid = true; // pbs à revoir
       }
     }
 
@@ -162,7 +162,7 @@ async function autocompletion() {
     legumeItem.addEventListener("click", () => {
       input.value = legume.Nom; // Met le nom du légume dans l'input
       suggestionsList.innerHTML = ""; // Vider les suggestions après sélection
-      displayVegetableDetails(legume); // Fonction pour afficher les détails
+      // displayVegetableDetails(legume); // Fonction pour afficher les détails
     });
 
     suggestionsList.appendChild(legumeItem);
@@ -180,6 +180,7 @@ async function filterSuggestions() {
 
   // Si l'input est vide, ne rien afficher
   if (input === "") {
+    suggestionsList.style.display = "none"; // Cacher la liste de suggestions
     return;
   }
 
@@ -207,11 +208,15 @@ async function filterSuggestions() {
     legumeItem.addEventListener("click", () => {
       document.getElementById("nom").value = legume.Nom;
       suggestionsList.innerHTML = ""; // Vider la liste après sélection
-      displayVegetableDetails(legume); // Appeler une fonction pour afficher les détails du légume
+      // displayVegetableDetails(legume); // Appeler une fonction pour afficher les détails du légume
     });
 
     suggestionsList.appendChild(legumeItem);
   });
+  // Afficher la liste de suggestions si des résultats sont trouvés
+  if (filteredLegumes.length > 0) {
+    suggestionsList.style.display = "block"; // Afficher la liste
+  }
 }
 
 //_____________AFFICHER la date et additionner les jours (temps de levée et récole)_____________________________

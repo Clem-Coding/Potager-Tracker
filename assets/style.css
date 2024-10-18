@@ -452,6 +452,7 @@ img {
 
 #suggestions {
   position: absolute;
+  display: none;
   top: 100%; /* Juste en dessous de l'input */
   left: 0;
   right: 0;
