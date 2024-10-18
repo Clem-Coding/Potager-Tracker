@@ -48,6 +48,7 @@
             list="autocompletion"
             placeholder="Rechercher un légume"
             id="nom"
+            oninput="filterSuggestions()"
             name="nom"
           />
           <!-- <img
@@ -55,12 +56,18 @@
             class="search-icon"
             alt="Recherche"
           /> -->
-          <datalist id="autocompletion"></datalist>
+          <ul id="suggestions" class="suggestions-list"></ul>
         </div>
 
         <div class="date-container">
           <div class="phrase-date">À quelle date?</div>
-          <input type="date" id="date" name="date" />
+          <input
+            type="date"
+            id="date"
+            name="date"
+            min="2023-01-01"
+            max="2025-04-30"
+          />
         </div>
 
         <div class="btn-container">

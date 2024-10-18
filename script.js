@@ -36,11 +36,14 @@ let tableau = document.getElementById("tableau");
 let divTableau = document.querySelector(".section-tableau");
 
 // VARIABLES DiVERSES
+let dateInvalid = false;
 
 //__________________FONCTION PRINCIPALE pour le moment avec écouteur, A RENOMMER?!________________________
 function rentrerLesDonnees() {
   btnAjouter.addEventListener("click", async (e) => {
     e.preventDefault();
+
+    console.log("date verif", dateEntrante.value);
 
     // Charger les données JSON
     const listeLegumes = await chargerDonneesJson("data.json");
@@ -51,74 +54,92 @@ function rentrerLesDonnees() {
 
     // Afficher une alerte si aucune date ou légume n'est saisi
     if (!legumeSaisi && !dateEntrante.value) {
+      console.log("date", dateEntrante);
       legumeEntrant.value = "";
       dateEntrante.value = "";
 
       alert("Pas de légume ni de date saisis !");
-
       return;
     } else if (!legumeSaisi) {
       legumeEntrant.value = "";
-      dateEntrante.value = "";
+      // dateEntrante.value = "";
 
       alert("Pas de légume saisi !");
       return;
     } else if (!dateEntrante.value) {
       dateEntrante.value = "";
-      legumeEntrant.value = "";
+      // legumeEntrant.value = "";
       alert("Pas de date saisie !");
       return;
+    } else if (dateEntrante.value) {
+      const nouvelleDate = new Date(dateEntrante.value);
+      console.log("Objet Date créé :", nouvelleDate);
+      const year = nouvelleDate.getFullYear(); // Obtient l'année de la date
+      if (year < 2024 || year > 2025) {
+        alert("Veuillez saisir une date valide");
+        dateInvalid = true;
+      }
     }
 
     for (let i = 0; i < nomsLegume.length; i++) {
-      if (legumeSaisi === nomsLegume[i].toUpperCase()) {
-        nbJoursLevee = listeLegumes[i]["Temps de levée"];
-        nbJoursRecolte = listeLegumes[i]["Temps de récolte"];
+      if (!dateInvalid) {
+        if (legumeSaisi === nomsLegume[i].toUpperCase()) {
+          nbJoursLevee = listeLegumes[i]["Temps de levée"];
+          nbJoursRecolte = listeLegumes[i]["Temps de récolte"];
 
-        //les valeurs à envoyer dans le tableau de la fonction ajouterLigne()
-        let imageLegume = liensImagesLegumes[i];
+          //les valeurs à envoyer dans le tableau de la fonction ajouterLigne()
+          let imageLegume = liensImagesLegumes[i];
 
-        let valeur1 = nomsLegume[i];
-        let valeur2 = formaterDateFr(new Date(dateEntrante.value));
-        let valeur3 = listeLegumes[i]["Température de germination"] + "°C";
-        let valeur4 = listeLegumes[i]["Temps de levée"] + " jours";
-        let valeur5 =
-          "• levera autour du <br>" +
-          "<span class='important'>" +
-          dateLevee(nbJoursLevee) +
-          "</span>" +
-          "<br>" +
-          "• recolte autour du <br>" +
-          "<span class='important'>" +
-          dateRecolte(nbJoursRecolte) +
-          "</span>";
+          let valeur1 = nomsLegume[i];
+          let valeur2 = formaterDateFr(new Date(dateEntrante.value));
+          let valeur3 = listeLegumes[i]["Température de germination"] + "°C";
+          let valeur4 = listeLegumes[i]["Temps de levée"] + " jours";
+          let valeur5 =
+            "• levera autour du <br>" +
+            "<span class='important'>" +
+            dateLevee(nbJoursLevee) +
+            "</span>" +
+            "<br>" +
+            "• recolte autour du <br>" +
+            "<span class='important'>" +
+            dateRecolte(nbJoursRecolte) +
+            "</span>";
 
-        // Ajoute la ligne
-        const derniereLigne = ajouterLigne(
-          valeur1,
-          valeur2,
-          valeur3,
-          valeur4,
-          valeur5,
-          imageLegume
-        );
+          // Ajoute la ligne
+          const derniereLigne = ajouterLigne(
+            valeur1,
+            valeur2,
+            valeur3,
+            valeur4,
+            valeur5,
+            imageLegume
+          );
 
-        // Fait défiler jusqu'à la nouvelle ligne ajoutée
-        let nombreDeLignes = tableau.rows.length;
+          // Fait défiler jusqu'à la nouvelle ligne ajoutée
+          let nombreDeLignes = tableau.rows.length;
 
-        if (nombreDeLignes <= 4) {
-          divTableau.scrollIntoView({ behavior: "smooth", block: "start" });
-        } else {
-          window.scrollTo({
-            top: document.body.scrollHeight,
-            behavior: "smooth",
-          });
+          if (nombreDeLignes <= 4) {
+            divTableau.scrollIntoView({ behavior: "smooth", block: "start" });
+          } else {
+            window.scrollTo({
+              top: document.body.scrollHeight,
+              behavior: "smooth",
+            });
+          }
+
+          sauverDonnees(
+            valeur1,
+            valeur2,
+            valeur3,
+            valeur4,
+            valeur5,
+            imageLegume
+          );
+          gestionCheckboxes();
         }
-
-        sauverDonnees(valeur1, valeur2, valeur3, valeur4, valeur5, imageLegume);
-        gestionCheckboxes();
       }
     }
+
     legumeEntrant.value = "";
     dateEntrante.value = "";
   });
@@ -127,14 +148,70 @@ function rentrerLesDonnees() {
 //_____________ AUTOCOMPLETION pour le champ de recherche des légumes________-_____
 
 async function autocompletion() {
-  const dataList = document.getElementById("autocompletion");
+  const input = document.getElementById("nom");
+  const suggestionsList = document.getElementById("suggestions");
+  suggestionsList.innerHTML = ""; // Vider les suggestions précédentes
   const listeLegumesAuto = await chargerDonneesJson("data.json");
 
   for (let legume of listeLegumesAuto) {
-    const autocompletion = document.createElement("option");
-    autocompletion.value = legume.Nom;
-    dataList.appendChild(autocompletion);
+    const legumeItem = document.createElement("li");
+    legumeItem.textContent = legume.Nom;
+    legumeItem.classList.add("suggestion-item");
+
+    // Ajoute un gestionnaire d'événement pour sélectionner le légume
+    legumeItem.addEventListener("click", () => {
+      input.value = legume.Nom; // Met le nom du légume dans l'input
+      suggestionsList.innerHTML = ""; // Vider les suggestions après sélection
+      displayVegetableDetails(legume); // Fonction pour afficher les détails
+    });
+
+    suggestionsList.appendChild(legumeItem);
   }
+}
+
+// Test filtrer suggestions
+
+async function filterSuggestions() {
+  const input = document.getElementById("nom").value.toLowerCase();
+  const suggestionsList = document.getElementById("suggestions");
+  const listeLegumesAuto = await chargerDonneesJson("data.json"); // Charger les données JSON
+
+  suggestionsList.innerHTML = ""; // Vider les suggestions précédentes
+
+  // Si l'input est vide, ne rien afficher
+  if (input === "") {
+    return;
+  }
+
+  // Filtrer les légumes en fonction de la saisie
+  const filteredLegumes = listeLegumesAuto.filter((legume) =>
+    legume.Nom.toLowerCase().startsWith(input)
+  );
+
+  // Si aucun légume ne correspond, afficher un message
+  if (filteredLegumes.length === 0) {
+    const noResultItem = document.createElement("li");
+    noResultItem.textContent = "Aucun résultat trouvé";
+    noResultItem.classList.add("no-result-item");
+    suggestionsList.appendChild(noResultItem);
+    return;
+  }
+
+  // Ajouter les résultats filtrés dans la liste
+  filteredLegumes.forEach((legume) => {
+    const legumeItem = document.createElement("li");
+    legumeItem.textContent = legume.Nom;
+    legumeItem.classList.add("suggestion-item");
+
+    // Lorsqu'un utilisateur clique sur un légume, remplir le champ et vider la liste
+    legumeItem.addEventListener("click", () => {
+      document.getElementById("nom").value = legume.Nom;
+      suggestionsList.innerHTML = ""; // Vider la liste après sélection
+      displayVegetableDetails(legume); // Appeler une fonction pour afficher les détails du légume
+    });
+
+    suggestionsList.appendChild(legumeItem);
+  });
 }
 
 //_____________AFFICHER la date et additionner les jours (temps de levée et récole)_____________________________

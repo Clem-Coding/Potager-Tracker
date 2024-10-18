@@ -133,6 +133,18 @@ input[type="search"] {
   margin-right: auto;
 }
 
+input[type="search"]:focus {
+  outline: none;
+  border: 2px solid #f5deb3;
+  box-shadow: 0 0 5px rgba(236, 29, 29, 0.5); /* ajoute un léger effet de surbrillance */
+}
+
+input[type="date"]:focus {
+  outline: none;
+  border: 2px solid #f5deb3;
+  box-shadow: 0 0 5px rgba(224, 33, 33, 0.5); /* ajoute un léger effet de surbrillance */
+}
+
 #bouton-ajouter {
   border-radius: 2em;
   border: none;
@@ -151,18 +163,10 @@ input[type="search"] {
 
 /* ---------- Section Tableau --------------------*/
 
-/* th.colonne-large {
-  width: 40%; 
-}
-
-th.colonne-narrow {
-  min-width: 10%;
-  background-color: #f05754;
-} */
-
 .section-tableau {
   height: 100vh;
-  padding: 5em;
+  padding: 1.5em;
+  padding-top: 6em;
 }
 
 /* Conteneur qui gère le défilement */
@@ -175,7 +179,7 @@ th.colonne-narrow {
 
 table {
   border-collapse: collapse;
-  border: 1px solid #8c8c8c;
+  /* border: 1px solid #8c8c8c; */
   font-family: Roboto, sans-serif;
   font-size: 1.5rem;
   border: none;
@@ -190,7 +194,7 @@ table {
 th,
 td {
   padding: 8px 10px;
-  border: solid 2px black;
+  /* border: solid 2px black; */
   text-align: center;
   vertical-align: middle;
 }
@@ -230,11 +234,11 @@ td:nth-of-type(5) {
 td:nth-of-type(7) {
   min-width: 30%;
 }
-
+td:nth-of-type(1),
 td:nth-of-type(2),
 td:nth-of-type(3),
 td:nth-of-type(4) {
-  min-width: 15%;
+  min-width: auto;
 }
 
 td:nth-of-type(6),
@@ -440,4 +444,34 @@ img {
   .intro-message {
     font-size: 2rem;
   }
+}
+
+/* test autocompletion */
+.search-container {
+  position: relative;
+}
+
+#suggestions {
+  position: absolute;
+  top: 100%; /* Juste en dessous de l'input */
+  left: 0;
+  right: 0;
+  background-color: #fffae5;
+  border-radius: 5px;
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto; /* Ajoute un défilement si trop d'éléments */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease; /* Animation douce pour le survol */
+}
+
+.suggestion-item:hover {
+  background-color: #f5deb3; /* Change la couleur de fond au survol */
 }
